@@ -1,0 +1,16 @@
+# Ignore build output folders
+bin/
+obj/
+
+# Ignore wwwroot/lib if managed by package manager
+wwwroot/lib/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+
+# Others
+*.log
+*.tmp
+*.DS_Store

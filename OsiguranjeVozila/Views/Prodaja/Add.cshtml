@@ -1,0 +1,70 @@
+﻿@model OsiguranjeVozila.Models.ViewModels.AddProdajaViewModel
+
+
+
+@{
+    ViewData["Title"] = "Prodaja - Dodaj";
+}
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1>Dodaj novu prodaju</h1>
+    </div>
+</div>
+
+
+<div class="container py-2">
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label">Datum Kupovine</label>
+            <input type="date" class="form-control" id="datumKupovine" asp-for="DatumKupovine" />
+            <span asp-validation-for="DatumKupovine" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Ucesce u steti</label>
+            <input type="number" class="form-control" id="ucesceUSteti" asp-for="UcesceUSteti" />
+            <span asp-validation-for="UcesceUSteti" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Klijent</label>
+            <select asp-for="KlijentId" asp-items="ViewBag.KlijentList" class="form-control">
+                <option value="">-- Odaberite klijenta --</option>
+                
+            </select>
+            <span asp-validation-for="KlijentId" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Polisa</label>
+            <select asp-for="PolisaId" asp-items="ViewBag.PolisaList" class="form-control">
+                <option value="">-- Odaberite polisu --</option>
+                
+            </select>
+            <span asp-validation-for="PolisaId" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Vozilo</label>
+            <select asp-for="VoziloId" asp-items="ViewBag.VoziloList" class="form-control">
+                <option value="">-- Odaberite vozilo --</option>
+                
+            </select>
+            <span asp-validation-for="VoziloId" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-dark">
+                Sačuvaj
+            </button>
+            <a class="btn btn-dark"
+            asp-controller="Prodaja"
+            asp-action="Add"
+            asp-route-reset="true">
+                Nazad na početnu
+            </a>
+        </div>
+    </form>
+</div>

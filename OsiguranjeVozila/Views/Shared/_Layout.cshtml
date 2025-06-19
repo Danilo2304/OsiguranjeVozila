@@ -1,0 +1,164 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> signInManager
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - OsiguranjeVozila</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/OsiguranjeVozila.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href='https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js'></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark  border-bottom 
+                    box-shadow" style="background-color: darkslateblue">
+            <div class="container-fluid px-5">
+                
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Izvjestaj" 
+                            asp-action="List">Početna strana</a>
+                        </li>
+                        @if (signInManager.IsSignedIn(User) && User.IsInRole("Administrator"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link active px-4"
+                                   asp-area=""
+                                   asp-controller="AdminUsers"
+                                   asp-action="List">
+                                    Zaposleni
+                                </a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link active px-4"
+                                   asp-area=""
+                                   asp-controller="Klijent"
+                                   asp-action="List">
+                                    Klijenti
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active px-4"
+                                   asp-area=""
+                                   asp-controller="Vozilo"
+                                   asp-action="List">
+                                    Vozila
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active px-4"
+                                   asp-area=""
+                                   asp-controller="Prodaja"
+                                   asp-action="List">
+                                    Prodaje
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active px-4"
+                                   asp-area=""
+                                   asp-controller="AdminPolise"
+                                   asp-action="List">
+                                    Polise
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active px-4"
+                                   asp-area=""
+                                   asp-controller="AdminUsloviOsiguranja"
+                                   asp-action="List">
+                                    Uslovi osiguranja
+                                </a>
+                            </li>
+                        }
+                        else if (signInManager.IsSignedIn(User) && User.IsInRole("Zaposleni"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link active"
+                                   asp-area=""
+                                   asp-controller="Klijent"
+                                   asp-action="List">
+                                    Klijenti
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link active"
+                                   asp-area=""
+                                   asp-controller="Vozilo"
+                                   asp-action="List">
+                                    Vozila
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link active"
+                                   asp-area=""
+                                   asp-controller="Prodaja"
+                                   asp-action="List">
+                                    Prodaje
+                                </a>
+                            </li>
+                        }
+                    </ul>
+
+                    <div class="d-flex align-items-center">
+                        @if (signInManager.IsSignedIn(User))
+                        {
+                            <div class="me-3 text-light">
+                                @User?.Identity?.Name
+                            </div>
+                                <a class="btn me-3 bg-light text-dark"
+                               asp-area=""
+                               asp-controller="Account"
+                               asp-action="Logout">
+                                Logout
+                            </a>
+                        }
+                        else
+                        {
+                            <a class="btn me-3 bg-light text-dark"
+                               asp-area=""
+                               asp-controller="Account"
+                               asp-action="Login">
+                                Login
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div>
+        <main role="main" class="pb-3">
+            @RenderBody() @* shows different content for different views *@
+            
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container-fluid px-5">
+            &copy; 2025 - OsiguranjeVozila - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+
+    
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

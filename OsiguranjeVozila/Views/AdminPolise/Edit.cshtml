@@ -1,0 +1,66 @@
+﻿@model OsiguranjeVozila.Models.ViewModels.EditPolisaViewModel
+
+
+@{
+    ViewData["Title"] = "Polise - Izmijeni";
+}
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1>Izmjena polise osiguranja</h1>
+    </div>
+</div>
+
+
+<div class="container py-5">
+
+    @if (Model != null)
+    {
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label">Id</label>
+                <input type="text" class="form-control" id="id" asp-for="Id" readonly />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Naziv</label>
+                <input type="text" class="form-control" id="naziv" asp-for="Naziv" />
+                <span asp-validation-for="Naziv" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Trajanje polise</label>
+                <input type="number" class="form-control" id="trajanje" asp-for="Trajanje" />
+                <span asp-validation-for="Trajanje" class="text-danger"></span>
+            </div>
+
+
+            <div class="mb-3">
+                <label class="form-label">Uslovi Osiguranja</label>
+                <select class="form-select" asp-items="@Model.UsloviOsiguranja" asp-for="SelektovaniUslovi">
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Nominalni Iznos</label>
+                <input type="number" class="form-control" id="nominalniIznos" asp-for="NominalniIznos" />
+                <span asp-validation-for="NominalniIznos" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-dark">
+                    Sačuvaj
+                </button>
+                <button type="submit" class="btn btn-danger"
+                        asp-action="Delete" asp-controller="AdminPolise" asp-area="">
+                    Obriši
+                </button>
+            </div>
+        </form>
+    }
+    else
+    {
+        <p>Polisa nije pronadjena</p>
+    }
+</div>
+
+
+
+

@@ -1,0 +1,97 @@
+﻿@model OsiguranjeVozila.Models.ViewModels.EditVoziloViewModel
+
+
+@{
+    ViewData["Title"] = "Vozilo - Izmijeni";
+}
+
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1>Izmjena podataka o vozilu</h1>
+    </div>
+</div>
+
+
+<div class="container py-2">
+    @if (Model != null)
+    {
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label">Id</label>
+                <input type="text" class="form-control" id="id" asp-for="Id" readonly />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Tip</label>
+                <input type="text" class="form-control" id="tip" asp-for="Tip" />
+                <span asp-validation-for="Tip" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Marka</label>
+                <input type="text" class="form-control" id="marka" asp-for="Marka" />
+                <span asp-validation-for="Marka" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Model</label>
+                <input type="text" class="form-control" id="model" asp-for="Model" />
+                <span asp-validation-for="Model" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Registarska oznaka</label>
+                <input type="text" class="form-control" id="registarskaOznaka"
+                       asp-for="RegistarskaOznaka" />
+                <span asp-validation-for="RegistarskaOznaka" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Godina proizvodnje</label>
+                <input type="number" class="form-control" id="godinaProizvodnje"
+                       asp-for="GodinaProizvodnje" />
+                <span asp-validation-for="GodinaProizvodnje" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Kubikaza</label>
+                <input type="number" class="form-control" id="kubikaza" asp-for="Kubikaza" />
+                <span asp-validation-for="Kubikaza" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Snaga Motora</label>
+                <input type="number" class="form-control" id="snagaMotora" asp-for="SnagaMotora" />
+                <span asp-validation-for="SnagaMotora" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Broj Sasije</label>
+                <input type="text" class="form-control" id="brojSasije" asp-for="BrojSasije" />
+                <span asp-validation-for="BrojSasije" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Datum Registracijee</label>
+                <input type="date" class="form-control" id="datumRegistracije"
+                       asp-for="DatumRegistracije" />
+                <span asp-validation-for="DatumRegistracije" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Datum Prve Registracije</label>
+                <input type="date" class="form-control" id="datumPrveRegistracije"
+                       asp-for="DatumPrveRegistracije" />
+                <span asp-validation-for="DatumPrveRegistracije" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-dark">
+                    Sačuvaj
+                </button>
+                <button type="submit" class="btn btn-danger"
+                        asp-area=""
+                        asp-action="Delete"
+                        asp-controller="Vozilo">
+                    Obriši
+                </button>
+            </div>
+        </form>
+    }
+    else
+    {
+        <p>Vozilo nije pronadjeno u evidenciji</p>
+    }
+</div>

@@ -1,0 +1,33 @@
+﻿@model OsiguranjeVozila.Models.ViewModels.AddUslovOsiguranjaViewModel
+
+@{
+    ViewData["Title"] = "Uslovi osiguranja - Dodaj";
+}
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1>Dodaj uslov osiguranja</h1>
+    </div>
+</div>
+
+<div class="container py-5">
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label">Naziv</label>
+            <input type="text" class="form-control" id="naziv" name="naziv" asp-for="Naziv"/>
+            <span class="text-danger" asp-validation-for="Naziv"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Opis</label>
+            <input type="text" class="form-control" id="opis" name="opis" asp-for="Opis"/>
+            <span class="text-danger" asp-validation-for="Opis"></span>
+        </div>
+
+
+        <div class ="mb-3">
+        <button type="submit" class="btn btn-dark">
+            Sačuvaj
+        </button>
+        </div>
+    </form>
+</div>
