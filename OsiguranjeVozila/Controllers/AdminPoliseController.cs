@@ -73,7 +73,7 @@ namespace OsiguranjeVozila.Controllers
 
             await polisaRepository.AddAsync(polisa);
 
-
+            TempData["SuccessMessage"] = "Nova polisa je dodata!";
 
             return RedirectToAction("List");
         }
@@ -152,6 +152,7 @@ namespace OsiguranjeVozila.Controllers
 
                 if (izmijenjenaPolisa != null)
                 {
+                    TempData["SuccessMessage"] = "Podaci o polisi su ažurirani!";
                     return RedirectToAction("List");
                 }
 
@@ -178,6 +179,7 @@ namespace OsiguranjeVozila.Controllers
 
                 if (polisa != null)
                 {
+                    TempData["SuccessMessage"] = "Polisa je obrisana!";
                     return RedirectToAction("List");
                 }
 

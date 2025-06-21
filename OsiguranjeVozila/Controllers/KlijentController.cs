@@ -84,9 +84,11 @@ namespace OsiguranjeVozila.Controllers
                 return View(addKlijentViewModel);
             }
 
-            await klijentRepository.AddAsync(klijent);
-            
 
+
+            await klijentRepository.AddAsync(klijent);
+
+            TempData["SuccessMessage"] = "Novi klijent je dodat!";
 
             if (next == "Prodaja")
             {
@@ -141,6 +143,7 @@ namespace OsiguranjeVozila.Controllers
 
             if(izmijenjenKlijent != null)
             {
+                TempData["SuccessMessage"] = "Podaci su uspješno ažurirani!";
                 return RedirectToAction("List");
             }
 
@@ -155,6 +158,7 @@ namespace OsiguranjeVozila.Controllers
 
             if(klijent != null)
             {
+                TempData["SuccessMessage"] = "Klijent je obrisan!";
                 return RedirectToAction("List");
             }
 

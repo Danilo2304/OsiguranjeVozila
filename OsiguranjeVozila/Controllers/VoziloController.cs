@@ -84,7 +84,9 @@ namespace OsiguranjeVozila.Controllers
 
                 await voziloRepository.AddAsync(vozilo);
 
-                if(next == "Prodaja")
+            TempData["SuccessMessage"] = "Novo vozilo je dodato!";
+
+            if (next == "Prodaja")
             {
                 HttpContext.Session.SetString("VoziloId", vozilo.Id.ToString());
 
@@ -144,6 +146,7 @@ namespace OsiguranjeVozila.Controllers
 
             if(izmijenjenoVozilo != null)
             {
+                TempData["SuccessMessage"] = "Podaci o vozilu su ažurirani!";
                 return RedirectToAction("List");
             }
 
@@ -157,7 +160,7 @@ namespace OsiguranjeVozila.Controllers
 
             if(vozilo != null)
             {
-
+                TempData["SuccessMessage"] = "Vozilo je obrisano!";
                 return RedirectToAction("List");
             }
 

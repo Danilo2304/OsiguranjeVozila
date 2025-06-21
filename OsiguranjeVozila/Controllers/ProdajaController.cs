@@ -134,6 +134,8 @@ namespace OsiguranjeVozila.Controllers
 
             await prodajaRepository.AddAsync(novaProdaja);
 
+            TempData["SuccessMessage"] = "Nova prodaja je kreirana!";
+
             return RedirectToAction("List", "Prodaja");
         }
 
@@ -264,6 +266,7 @@ namespace OsiguranjeVozila.Controllers
 
             if (izmijenjenaProdaja != null)
             {
+                TempData["SuccessMessage"] = "Prodaja je ažurirana!";
                 return RedirectToAction("List");
             }
 
@@ -277,6 +280,7 @@ namespace OsiguranjeVozila.Controllers
 
             if (prodaja != null)
             {
+                TempData["SuccessMessage"] = "Prodaja je obrisana!";
                 return RedirectToAction("List");
             }
 

@@ -5,6 +5,13 @@
     ViewData["Title"] = "Polise - Lista";
 }
 
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
 <div class="bg-secondary bg-opacity-10 py-2">
     <div class="container">
         <h1>Lista polisa osiguranja - Funkcionalnost Administratora</h1>

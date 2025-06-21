@@ -87,7 +87,7 @@ namespace OsiguranjeVozila.Controllers
 
                     if (identityResult != null && identityResult.Succeeded)
                     {
-                        TempData["SuccessMessage"] = "Prodaja je ažurirana!";
+                        TempData["SuccessMessage"] = "Novi zaposleni je dodat!";
                         return RedirectToAction("List", "AdminUsers");
                     }
                     
@@ -111,7 +111,7 @@ namespace OsiguranjeVozila.Controllers
 
                 if (identityResult != null && identityResult.Succeeded)
                 {
-                    TempData["SuccessMessage"] = "Prodja je obrisana!";
+                    TempData["SuccessMessage"] = "Zaposleni je uspješno obrisan!";
                     return RedirectToAction("List", "AdminUsers");
                     
                 }
@@ -157,6 +157,7 @@ namespace OsiguranjeVozila.Controllers
 
             if (identityResult != null && identityResult.Succeeded)
             {
+                TempData["SuccessMessage"] = "Podaci za zaposlenog su uspješno ažurirani!";
                 return RedirectToAction("List", "AdminUsers");
             }
 
