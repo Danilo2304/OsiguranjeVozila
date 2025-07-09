@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using OsiguranjeVozila.Data;
 using OsiguranjeVozila.Models.Domain;
 using OsiguranjeVozila.Models.ViewModels;
 using OsiguranjeVozila.Repositories;
@@ -10,14 +12,19 @@ namespace OsiguranjeVozila.Controllers
     public class VoziloController : Controller
     {
         private readonly IVoziloRepository voziloRepository;
+        private readonly IProdajaRepository prodajaRepository;
+        private readonly OsiguranjeDbContext osiguranjeDbContext;
 
-        public VoziloController(IVoziloRepository voziloRepository)
+        public VoziloController(IVoziloRepository voziloRepository, IProdajaRepository prodajaRepository,
+            OsiguranjeDbContext osiguranjeDbContext)
         {
             this.voziloRepository = voziloRepository;
+            this.prodajaRepository = prodajaRepository;
+            this.osiguranjeDbContext = osiguranjeDbContext;
         }
 
         [HttpGet]
-        public async Task<IActionResult> List(string? searchQuery, string? sortBy, 
+        public async Task<IActionResult> List(string? searchQuery, string? sortBy,
             string? sortDirection,
             int pageSize = 3, int pageNumber = 1) // vraca listu svih vozila
         {
@@ -28,7 +35,7 @@ namespace OsiguranjeVozila.Controllers
             {
                 pageNumber--;
             }
-            if(pageNumber < 1)
+            if (pageNumber < 1)
             {
                 pageNumber++;
             }
@@ -56,9 +63,40 @@ namespace OsiguranjeVozila.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add([FromQuery] string next, 
+        public async Task<IActionResult> Add([FromQuery] string next,
             AddVoziloViewModel addVoziloViewModel) //dodaje novo vozilo
         {
+            if (await voziloRepository.FindByRegistarskaOznaka(addVoziloViewModel.RegistarskaOznaka))
+            {
+                ModelState.AddModelError("RegistarskaOznaka", "Registarska oznaka već postoji");
+                return View(addVoziloViewModel);
+            }
+
+            if (await voziloRepository.FindByBrojSasije(addVoziloViewModel.BrojSasije))
+            {
+                ModelState.AddModelError("BrojSasije", "Broj šasije već postoji");
+                return View(addVoziloViewModel);
+            }
+
+            if (addVoziloViewModel.GodinaProizvodnje < 1900 || addVoziloViewModel.GodinaProizvodnje > DateTime.Now.Year)
+            {
+                ModelState.AddModelError("GodinaProizvodnje", "Neispravna godina proizvodnje");
+                return View(addVoziloViewModel);
+            }
+
+            if (addVoziloViewModel.GodinaProizvodnje > addVoziloViewModel.DatumPrveRegistracije.Year)
+            {
+                ModelState.AddModelError("DatumPrveRegistracije",
+                    "Datum prve registracije ne može biti prije godine kad je vozilo proizvedeno");
+                return View(addVoziloViewModel);
+            }
+
+            if (addVoziloViewModel.DatumRegistracije < (DateTime.Now.AddYears(-1)))
+            {
+                ModelState.AddModelError("DatumRegistracije", "Registracija vozila je istekla");
+                return View(addVoziloViewModel);
+            }
+
             var vozilo = new Vozilo
             {
                 Tip = addVoziloViewModel.Tip,
@@ -73,16 +111,7 @@ namespace OsiguranjeVozila.Controllers
                 DatumPrveRegistracije = addVoziloViewModel.DatumPrveRegistracije
             };
 
-            var voziloExists = await voziloRepository.
-                FindByRegistarskaOznaka(addVoziloViewModel.RegistarskaOznaka);
-
-            if (voziloExists == true)
-            {
-                ModelState.AddModelError("RegistarskaOznaka", "Vozilo već postoji");
-                return View(addVoziloViewModel);
-            }
-
-                await voziloRepository.AddAsync(vozilo);
+           await voziloRepository.AddAsync(vozilo);
 
             TempData["SuccessMessage"] = "Novo vozilo je dodato!";
 
@@ -93,7 +122,7 @@ namespace OsiguranjeVozila.Controllers
                 return RedirectToAction("Add", "Prodaja");
             }
 
-                return RedirectToAction("List");
+            return RedirectToAction("List");
         }
 
         [HttpGet]
@@ -101,7 +130,7 @@ namespace OsiguranjeVozila.Controllers
         {
             var vozilo = await voziloRepository.GetAsync(id);
 
-            if(vozilo != null)
+            if (vozilo != null)
             {
                 var editVoziloViewModel = new EditVoziloViewModel
                 {
@@ -127,6 +156,38 @@ namespace OsiguranjeVozila.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(EditVoziloViewModel editVoziloViewModel) //azurira vozilo
         {
+            if (await voziloRepository.FindByRegistarskaOznaka
+                (editVoziloViewModel.RegistarskaOznaka, editVoziloViewModel.Id)) 
+            {
+                ModelState.AddModelError("RegistarskaOznaka", "Registarska oznaka već postoji");
+                return View(editVoziloViewModel);
+            }
+
+            if (await voziloRepository.FindByBrojSasije(editVoziloViewModel.BrojSasije,editVoziloViewModel.Id))
+            {
+                ModelState.AddModelError("BrojSasije", "Broj šasije već postoji");
+                return View(editVoziloViewModel);
+            }
+
+            if (editVoziloViewModel.GodinaProizvodnje < 1900 || editVoziloViewModel.GodinaProizvodnje > DateTime.Now.Year)
+            {
+                ModelState.AddModelError("GodinaProizvodnje", "Neispravna godina proizvodnje");
+                return View(editVoziloViewModel);
+            }
+
+            if (editVoziloViewModel.GodinaProizvodnje > editVoziloViewModel.DatumPrveRegistracije.Year)
+            {
+                ModelState.AddModelError("DatumPrveRegistracije",
+                    "Datum prve registracije ne može biti prije godine kad je vozilo proizvedeno");
+                return View(editVoziloViewModel);
+            }
+
+            if (editVoziloViewModel.DatumRegistracije < (DateTime.Now.AddYears(-1)))
+            {
+                ModelState.AddModelError("DatumRegistracije", "Registracija vozila je istekla");
+                return View(editVoziloViewModel);
+            }
+
             var vozilo = new Vozilo
             {
                 Id = editVoziloViewModel.Id,
@@ -144,7 +205,7 @@ namespace OsiguranjeVozila.Controllers
 
             var izmijenjenoVozilo = await voziloRepository.UpdateAsync(vozilo);
 
-            if(izmijenjenoVozilo != null)
+            if (izmijenjenoVozilo != null)
             {
                 TempData["SuccessMessage"] = "Podaci o vozilu su ažurirani!";
                 return RedirectToAction("List");
@@ -156,19 +217,29 @@ namespace OsiguranjeVozila.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete(EditVoziloViewModel editVoziloViewModel) //brise vozilo
         {
-            var vozilo = await voziloRepository.DeleteAsync(editVoziloViewModel.Id);
+            var prodaja = await prodajaRepository.GetByIdVozila(editVoziloViewModel.Id);
+            
 
-            if(vozilo != null)
+            if (prodaja == null)
             {
-                TempData["SuccessMessage"] = "Vozilo je obrisano!";
+                var vozilo = await voziloRepository.DeleteAsync(editVoziloViewModel.Id);
+
+                if (vozilo != null)
+                {
+                    TempData["SuccessMessage"] = "Vozilo je obrisano!";
+                    return RedirectToAction("List");
+                }
+            }
+            else
+            {
                 return RedirectToAction("List");
             }
 
             return RedirectToAction("Edit", new { id = editVoziloViewModel.Id });
-            
+
         }
 
-        
+
 
         [HttpGet]
         public async Task<IActionResult> Selected(EditVoziloViewModel editVoziloViewModel) // uzima id izabranog vozila i salje ga na add metodu prodaje
@@ -178,9 +249,9 @@ namespace OsiguranjeVozila.Controllers
             return RedirectToAction("Add", "Prodaja");
         }
 
-        
 
-        
+
+
     }
 }
 

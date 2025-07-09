@@ -16,11 +16,19 @@ namespace OsiguranjeVozila.Repositories
             this.polisaRepository = polisaRepository;
         }
 
-        public async Task<ProdajaPolise> GetByIdPolise(Guid id) //vraca prodaju na osnovu id-ja polise
+        public async Task<ProdajaPolise?> GetByIdPolise(Guid id) //vraca prodaju na osnovu id-ja polise
         {
             return await osiguranjeDbContext.Prodaje.FirstOrDefaultAsync(x => x.PolisaId == id); 
+        }
 
+        public async Task<ProdajaPolise?> GetByIdKlijenta(Guid id)
+        {
+            return await osiguranjeDbContext.Prodaje.FirstOrDefaultAsync(x => x.KlijentId == id);
+        }
 
+        public async Task<ProdajaPolise?> GetByIdVozila(Guid id)
+        {
+            return await osiguranjeDbContext.Prodaje.FirstOrDefaultAsync(x => x.VoziloId == id);
         }
 
         public async Task<ProdajaPolise> AddAsync(ProdajaPolise prodaja) //kreira novu prodaju
@@ -144,7 +152,5 @@ namespace OsiguranjeVozila.Repositories
         {
             return await osiguranjeDbContext.Prodaje.CountAsync();
         }
-
-        
     }
 }

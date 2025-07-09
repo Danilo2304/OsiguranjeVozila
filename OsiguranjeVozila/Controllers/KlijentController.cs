@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using OsiguranjeVozila.Data;
 using OsiguranjeVozila.Models.Domain;
 using OsiguranjeVozila.Models.ViewModels;
 using OsiguranjeVozila.Repositories;
@@ -12,27 +14,29 @@ namespace OsiguranjeVozila.Controllers
     {
         private readonly IKlijentRepository klijentRepository;
         private readonly IProdajaRepository prodajaRepository;
+        private readonly OsiguranjeDbContext osiguranjeDbContext;
 
-        public KlijentController(IKlijentRepository klijentRepository, 
-            IProdajaRepository prodajaRepository)
+        public KlijentController(IKlijentRepository klijentRepository,
+            IProdajaRepository prodajaRepository, OsiguranjeDbContext osiguranjeDbContext)
         {
             this.klijentRepository = klijentRepository;
             this.prodajaRepository = prodajaRepository;
+            this.osiguranjeDbContext = osiguranjeDbContext;
         }
 
         [HttpGet]
-        public async Task<IActionResult> List(string? searchQuery, 
+        public async Task<IActionResult> List(string? searchQuery,
             string? sortBy, string? sortDirection,
             int pageSize = 10, int pageNumber = 1) //vraca listu svih klijenata
         {
             var totalRecords = await klijentRepository.CountAsync();
             var totalPages = Math.Ceiling((decimal)totalRecords / pageSize);
 
-            if(pageNumber > totalPages)
+            if (pageNumber > totalPages)
             {
                 pageNumber--;
             }
-            if(pageNumber < 1)
+            if (pageNumber < 1)
             {
                 pageNumber++;
             }
@@ -45,13 +49,13 @@ namespace OsiguranjeVozila.Controllers
             ViewBag.PageNumber = pageNumber;
 
 
-            var klijenti = await klijentRepository.GetAllASync(searchQuery,sortBy,sortDirection, 
-                 pageNumber,pageSize);
+            var klijenti = await klijentRepository.GetAllASync(searchQuery, sortBy, sortDirection,
+                 pageNumber, pageSize);
 
-            
+
 
             return View(klijenti);
-         }
+        }
 
         [HttpGet]
         public async Task<IActionResult> Add()
@@ -60,10 +64,14 @@ namespace OsiguranjeVozila.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add([FromQuery] string next, 
+        public async Task<IActionResult> Add([FromQuery] string next,
             AddKlijentViewModel addKlijentViewModel) //dodaj novog klijenta
         {
-
+            if (await klijentRepository.FindByEmail(addKlijentViewModel.Email))
+            {
+                ModelState.AddModelError("Email", "Korisnik već postoji");
+                return View(addKlijentViewModel);
+            }
 
             var klijent = new Klijent
             {
@@ -75,16 +83,6 @@ namespace OsiguranjeVozila.Controllers
                 DatumRodjenja = addKlijentViewModel.DatumRodjenja
 
             };
-
-            var klijentExists = await klijentRepository.FindByEmail(addKlijentViewModel.Email);
-
-            if (klijentExists == true)
-            {
-                ModelState.AddModelError("Email", "Korisnik već postoji");
-                return View(addKlijentViewModel);
-            }
-
-
 
             await klijentRepository.AddAsync(klijent);
 
@@ -98,9 +96,9 @@ namespace OsiguranjeVozila.Controllers
 
                 return RedirectToAction("Add", "Prodaja");
             }
-                
+
             return RedirectToAction("List");
-            
+
         }
 
         [HttpGet]
@@ -128,6 +126,12 @@ namespace OsiguranjeVozila.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(EditKlijentViewModel editKlijentViewModel) //azurira klijenta
         {
+            if (await klijentRepository.FindByEmail(editKlijentViewModel.Email, editKlijentViewModel.Id))
+            {
+                ModelState.AddModelError("Email", "Korisnik već postoji");
+                return View(editKlijentViewModel);
+            }
+
             Klijent klijent = new Klijent
             {
                 Ime = editKlijentViewModel.Ime,
@@ -141,7 +145,7 @@ namespace OsiguranjeVozila.Controllers
 
             var izmijenjenKlijent = await klijentRepository.UpdateAsync(klijent);
 
-            if(izmijenjenKlijent != null)
+            if (izmijenjenKlijent != null)
             {
                 TempData["SuccessMessage"] = "Podaci su uspješno ažurirani!";
                 return RedirectToAction("List");
@@ -154,19 +158,29 @@ namespace OsiguranjeVozila.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete(EditKlijentViewModel editKlijentViewModel) //brise klijenta
         {
-            var klijent = await klijentRepository.DeleteAsync(editKlijentViewModel.Id);
+            var prodaja = await prodajaRepository.GetByIdKlijenta(editKlijentViewModel.Id);
+            
 
-            if(klijent != null)
+            if (prodaja == null)
             {
-                TempData["SuccessMessage"] = "Klijent je obrisan!";
+                var klijent = await klijentRepository.DeleteAsync(editKlijentViewModel.Id);
+
+                if (klijent != null)
+                {
+                    TempData["SuccessMessage"] = "Klijent je obrisan!";
+                    return RedirectToAction("List");
+                }
+            }
+            else
+            {
                 return RedirectToAction("List");
             }
 
 
-            return RedirectToAction("Edit", new {id=editKlijentViewModel.Id});
+            return RedirectToAction("Edit", new { id = editKlijentViewModel.Id });
         }
 
-        
+
 
         [HttpGet]
         public async Task<IActionResult> Selected(EditKlijentViewModel editKlijentViewModel)// uzima id izabranog klijenta i salje ga na add metodu prodaje
@@ -176,7 +190,7 @@ namespace OsiguranjeVozila.Controllers
             return RedirectToAction("Add", "Prodaja");
         }
 
-        
+
     }
 }
 

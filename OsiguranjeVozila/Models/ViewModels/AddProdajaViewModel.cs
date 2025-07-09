@@ -5,11 +5,6 @@ namespace OsiguranjeVozila.Models.ViewModels
 {
     public class AddProdajaViewModel
     {
-        [Required(ErrorMessage ="Polje obavezno")]
-        public DateTime DatumKupovine { get; set; }
-
-        
-        public DateTime DatumIsteka { get; set; }
 
         public decimal Cijena { get; set; }
 

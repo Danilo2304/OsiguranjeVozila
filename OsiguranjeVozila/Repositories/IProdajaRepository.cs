@@ -17,7 +17,11 @@ namespace OsiguranjeVozila.Repositories
             int pageSize = 100); //vraca listu svih prodaja
 
 
-        Task<ProdajaPolise> GetByIdPolise(Guid id); //vraca prodaju na osnovu id-ja polise
+        Task<ProdajaPolise?> GetByIdPolise(Guid id); //vraca prodaju na osnovu id-ja polise
+
+        Task<ProdajaPolise?> GetByIdKlijenta(Guid id); //vraca prodaju na osnovu id-ja klijenta
+
+        Task<ProdajaPolise?> GetByIdVozila(Guid id); //vraca prodaju na osnovu id-ja vozila
 
         Task<IEnumerable<ProdajaPolise>> GetAllByPolisaIdAsync(Guid id); //vraca sve prodaje koje imaju istu polisu
 

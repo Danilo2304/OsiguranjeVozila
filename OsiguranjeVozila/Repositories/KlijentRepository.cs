@@ -53,19 +53,17 @@ namespace OsiguranjeVozila.Repositories
             return null;
         }
 
-        public async Task<bool> FindByEmail(string email) //provjerava da li klijent sa proslijedjenim mailom postoji
+        public async Task<bool> FindByEmail(string email, Guid? id = null) //provjerava da li klijent sa proslijedjenim mailom postoji
         {
-            var klijent = await osiguranjeDbContext.Klijenti.
-                FirstOrDefaultAsync(x => x.Email == email);
-
-            if (klijent != null)
+            
+            if (await osiguranjeDbContext.Klijenti.
+                AnyAsync(x => x.Email == email && (x.Id == null || x.Id != id)))
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+            
+            return false;
+            
         }
 
         public async Task<IEnumerable<Klijent>> GetAllASync(string? searchQuery,string? sortBy, string?

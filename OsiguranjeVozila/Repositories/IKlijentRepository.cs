@@ -17,6 +17,6 @@ namespace OsiguranjeVozila.Repositories
 
         Task<int> CountAsync(); //vraca ukupan broj klijenata
 
-        Task<bool> FindByEmail(string email); //provjerava da li klijent sa proslijedjenim mailom postoji
+        Task<bool> FindByEmail(string email, Guid? id = null); //provjerava da li klijent sa proslijedjenim mailom postoji
     }
 }

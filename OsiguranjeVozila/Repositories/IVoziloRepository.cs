@@ -17,7 +17,9 @@ namespace OsiguranjeVozila.Repositories
 
         Task<int> CountAsync();
 
-        Task<bool> FindByRegistarskaOznaka(string registracija);
+        Task<bool> FindByRegistarskaOznaka(string registracija, Guid? id = null);
+
+        Task<bool> FindByBrojSasije(string brojSasije, Guid? id = null);
     }
 }
 

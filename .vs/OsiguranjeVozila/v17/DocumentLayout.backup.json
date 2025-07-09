@@ -3,48 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|c:\\users\\danilo\\source\\repos\\osiguranjevozila\\osiguranjevozila\\controllers\\klijentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|solutionrelative:osiguranjevozila\\controllers\\klijentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|c:\\users\\danilo\\source\\repos\\osiguranjevozila\\osiguranjevozila\\controllers\\prodajacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|solutionrelative:osiguranjevozila\\controllers\\prodajacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|c:\\users\\danilo\\source\\repos\\osiguranjevozila\\osiguranjevozila\\views\\prodaja\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|solutionrelative:osiguranjevozila\\views\\prodaja\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|c:\\users\\danilo\\source\\repos\\osiguranjevozila\\osiguranjevozila\\repositories\\vozilorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|solutionrelative:osiguranjevozila\\repositories\\vozilorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|c:\\users\\danilo\\source\\repos\\osiguranjevozila\\osiguranjevozila\\views\\adminpolise\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|solutionrelative:osiguranjevozila\\views\\adminpolise\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|c:\\users\\danilo\\source\\repos\\osiguranjevozila\\osiguranjevozila\\repositories\\klijentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|solutionrelative:osiguranjevozila\\repositories\\klijentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|c:\\users\\danilo\\source\\repos\\osiguranjevozila\\osiguranjevozila\\controllers\\adminpolisecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|solutionrelative:osiguranjevozila\\controllers\\adminpolisecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|c:\\users\\danilo\\source\\repos\\osiguranjevozila\\osiguranjevozila\\views\\vozilo\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|solutionrelative:osiguranjevozila\\views\\vozilo\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|c:\\users\\danilo\\source\\repos\\osiguranjevozila\\osiguranjevozila\\controllers\\klijentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|solutionrelative:osiguranjevozila\\controllers\\klijentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|c:\\users\\danilo\\source\\repos\\osiguranjevozila\\osiguranjevozila\\repositories\\iklijentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|solutionrelative:osiguranjevozila\\repositories\\iklijentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|c:\\users\\danilo\\source\\repos\\osiguranjevozila\\osiguranjevozila\\controllers\\vozilocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|solutionrelative:osiguranjevozila\\controllers\\vozilocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|c:\\users\\danilo\\source\\repos\\osiguranjevozila\\osiguranjevozila\\controllers\\adminuserscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|solutionrelative:osiguranjevozila\\controllers\\adminuserscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|c:\\users\\danilo\\source\\repos\\osiguranjevozila\\osiguranjevozila\\repositories\\ivozilorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|solutionrelative:osiguranjevozila\\repositories\\ivozilorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|c:\\users\\danilo\\source\\repos\\osiguranjevozila\\osiguranjevozila\\views\\adminusers\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|solutionrelative:osiguranjevozila\\views\\adminusers\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|c:\\users\\danilo\\source\\repos\\osiguranjevozila\\osiguranjevozila\\views\\klijent\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|solutionrelative:osiguranjevozila\\views\\klijent\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|c:\\users\\danilo\\source\\repos\\osiguranjevozila\\osiguranjevozila\\views\\klijent\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|solutionrelative:osiguranjevozila\\views\\klijent\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|c:\\users\\danilo\\source\\repos\\osiguranjevozila\\osiguranjevozila\\repositories\\prodajarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9539633-311B-41BC-97C1-509781D3A386}|OsiguranjeVozila\\OsiguranjeVozila.csproj|solutionrelative:osiguranjevozila\\repositories\\prodajarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,174 +42,108 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 8,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "List.cshtml",
-              "DocumentMoniker": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Views\\Prodaja\\List.cshtml",
-              "RelativeDocumentMoniker": "OsiguranjeVozila\\Views\\Prodaja\\List.cshtml",
-              "ToolTip": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Views\\Prodaja\\List.cshtml",
-              "RelativeToolTip": "OsiguranjeVozila\\Views\\Prodaja\\List.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-21T14:24:21.265Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProdajaController.cs",
-              "DocumentMoniker": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Controllers\\ProdajaController.cs",
-              "RelativeDocumentMoniker": "OsiguranjeVozila\\Controllers\\ProdajaController.cs",
-              "ToolTip": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Controllers\\ProdajaController.cs",
-              "RelativeToolTip": "OsiguranjeVozila\\Controllers\\ProdajaController.cs",
-              "ViewState": "AgIAAAsBAAAAAAAAAAAAABoBAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T14:23:53.907Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "List.cshtml",
-              "DocumentMoniker": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Views\\AdminPolise\\List.cshtml",
-              "RelativeDocumentMoniker": "OsiguranjeVozila\\Views\\AdminPolise\\List.cshtml",
-              "ToolTip": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Views\\AdminPolise\\List.cshtml",
-              "RelativeToolTip": "OsiguranjeVozila\\Views\\AdminPolise\\List.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-21T14:19:47.014Z",
-              "EditorCaption": ""
+              "DocumentIndex": 3,
+              "Title": "KlijentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Repositories\\KlijentRepository.cs",
+              "RelativeDocumentMoniker": "OsiguranjeVozila\\Repositories\\KlijentRepository.cs",
+              "ToolTip": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Repositories\\KlijentRepository.cs",
+              "RelativeToolTip": "OsiguranjeVozila\\Repositories\\KlijentRepository.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAAADoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T11:07:01.524Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AdminPoliseController.cs",
-              "DocumentMoniker": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Controllers\\AdminPoliseController.cs",
-              "RelativeDocumentMoniker": "OsiguranjeVozila\\Controllers\\AdminPoliseController.cs",
-              "ToolTip": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Controllers\\AdminPoliseController.cs",
-              "RelativeToolTip": "OsiguranjeVozila\\Controllers\\AdminPoliseController.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAEsAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "IKlijentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Repositories\\IKlijentRepository.cs",
+              "RelativeDocumentMoniker": "OsiguranjeVozila\\Repositories\\IKlijentRepository.cs",
+              "ToolTip": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Repositories\\IKlijentRepository.cs",
+              "RelativeToolTip": "OsiguranjeVozila\\Repositories\\IKlijentRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T10:44:42.015Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-09T13:31:38.372Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "IVoziloRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Repositories\\IVoziloRepository.cs",
+              "RelativeDocumentMoniker": "OsiguranjeVozila\\Repositories\\IVoziloRepository.cs",
+              "ToolTip": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Repositories\\IVoziloRepository.cs",
+              "RelativeToolTip": "OsiguranjeVozila\\Repositories\\IVoziloRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T12:52:47.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "VoziloRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Repositories\\VoziloRepository.cs",
+              "RelativeDocumentMoniker": "OsiguranjeVozila\\Repositories\\VoziloRepository.cs",
+              "ToolTip": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Repositories\\VoziloRepository.cs",
+              "RelativeToolTip": "OsiguranjeVozila\\Repositories\\VoziloRepository.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAADcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T11:40:06.95Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "VoziloController.cs",
               "DocumentMoniker": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Controllers\\VoziloController.cs",
               "RelativeDocumentMoniker": "OsiguranjeVozila\\Controllers\\VoziloController.cs",
               "ToolTip": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Controllers\\VoziloController.cs",
               "RelativeToolTip": "OsiguranjeVozila\\Controllers\\VoziloController.cs",
-              "ViewState": "AgIAAJcAAAAAAAAAAAAAAJQAAABKAAAAAAAAAA==",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAzwFkAAABjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T10:41:29.342Z",
+              "WhenOpened": "2025-07-09T10:57:07.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProdajaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Repositories\\ProdajaRepository.cs",
+              "RelativeDocumentMoniker": "OsiguranjeVozila\\Repositories\\ProdajaRepository.cs",
+              "ToolTip": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Repositories\\ProdajaRepository.cs",
+              "RelativeToolTip": "OsiguranjeVozila\\Repositories\\ProdajaRepository.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAcwCIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T10:37:41.151Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProdajaController.cs",
+              "DocumentMoniker": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Controllers\\ProdajaController.cs",
+              "RelativeDocumentMoniker": "OsiguranjeVozila\\Controllers\\ProdajaController.cs",
+              "ToolTip": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Controllers\\ProdajaController.cs",
+              "RelativeToolTip": "OsiguranjeVozila\\Controllers\\ProdajaController.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAH4AAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T14:23:53.907Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "List.cshtml",
-              "DocumentMoniker": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Views\\Vozilo\\List.cshtml",
-              "RelativeDocumentMoniker": "OsiguranjeVozila\\Views\\Vozilo\\List.cshtml",
-              "ToolTip": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Views\\Vozilo\\List.cshtml",
-              "RelativeToolTip": "OsiguranjeVozila\\Views\\Vozilo\\List.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-21T10:41:25.634Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "List.cshtml",
-              "DocumentMoniker": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Views\\Klijent\\List.cshtml",
-              "RelativeDocumentMoniker": "OsiguranjeVozila\\Views\\Klijent\\List.cshtml",
-              "ToolTip": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Views\\Klijent\\List.cshtml",
-              "RelativeToolTip": "OsiguranjeVozila\\Views\\Klijent\\List.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-21T10:37:17.127Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "List.cshtml",
-              "DocumentMoniker": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Views\\AdminUsers\\List.cshtml",
-              "RelativeDocumentMoniker": "OsiguranjeVozila\\Views\\AdminUsers\\List.cshtml",
-              "ToolTip": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Views\\AdminUsers\\List.cshtml",
-              "RelativeToolTip": "OsiguranjeVozila\\Views\\AdminUsers\\List.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-21T10:35:29.379Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Add.cshtml",
-              "DocumentMoniker": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Views\\Klijent\\Add.cshtml",
-              "RelativeDocumentMoniker": "OsiguranjeVozila\\Views\\Klijent\\Add.cshtml",
-              "ToolTip": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Views\\Klijent\\Add.cshtml",
-              "RelativeToolTip": "OsiguranjeVozila\\Views\\Klijent\\Add.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-21T10:35:23.116Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "KlijentController.cs",
               "DocumentMoniker": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Controllers\\KlijentController.cs",
               "RelativeDocumentMoniker": "OsiguranjeVozila\\Controllers\\KlijentController.cs",
               "ToolTip": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Controllers\\KlijentController.cs",
               "RelativeToolTip": "OsiguranjeVozila\\Controllers\\KlijentController.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAAAFoAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-21T10:27:23.553Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "96b6dc81-80af-4294-ae45-add9330726fe",
-        "Display": 0,
-        "X": 304,
-        "Y": 184,
-        "Width": 1611,
-        "Height": 842,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AdminUsersController.cs",
-              "DocumentMoniker": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Controllers\\AdminUsersController.cs",
-              "RelativeDocumentMoniker": "OsiguranjeVozila\\Controllers\\AdminUsersController.cs",
-              "ToolTip": "C:\\Users\\Danilo\\source\\repos\\OsiguranjeVozila\\OsiguranjeVozila\\Controllers\\AdminUsersController.cs",
-              "RelativeToolTip": "OsiguranjeVozila\\Controllers\\AdminUsersController.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAAEgAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T10:24:17.312Z",
               "EditorCaption": ""
             }
           ]

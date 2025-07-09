@@ -123,8 +123,8 @@ namespace OsiguranjeVozila.Controllers
 
             ProdajaPolise novaProdaja = new ProdajaPolise
             {
-                DatumKupovine = addProdajaViewModel.DatumKupovine,
-                DatumIsteka = addProdajaViewModel.DatumKupovine.AddMonths(polisa.Trajanje),
+                DatumKupovine = DateTime.Now,
+                DatumIsteka = DateTime.Now.AddMonths(polisa.Trajanje),
                 Cijena = polisa.NominalniIznos - addProdajaViewModel.UcesceUSteti,
                 UcesceUSteti = addProdajaViewModel.UcesceUSteti,
                 VoziloId = addProdajaViewModel.VoziloId,

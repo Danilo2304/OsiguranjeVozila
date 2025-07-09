@@ -40,12 +40,20 @@ namespace OsiguranjeVozila.Repositories
             return null;
         }
 
-        public async Task<bool> FindByRegistarskaOznaka(string registracija)
+        public async Task<bool> FindByBrojSasije(string brojSasije, Guid? id = null)
         {
-            var vozilo = await osiguranjeDbContext.Vozila.
-                FirstOrDefaultAsync(x => x.RegistarskaOznaka == registracija);
+           if(await osiguranjeDbContext.Vozila.AnyAsync(x=>x.BrojSasije == brojSasije && (id == null || x.Id != id)))
 
-            if(vozilo != null)
+            {
+                return true;
+            }
+           return false;
+        }
+
+        public async Task<bool> FindByRegistarskaOznaka(string registracija, Guid? id = null)
+        {
+            if(await osiguranjeDbContext.Vozila.AnyAsync(x=>x.RegistarskaOznaka == registracija && 
+                    (id == null || x.Id != id)))
             {
                 return true;
             }
